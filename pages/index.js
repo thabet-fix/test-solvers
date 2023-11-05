@@ -3,28 +3,40 @@ import styles from "../styles/Home.module.css";
 import Container from "react-bootstrap/Container";
 import Carousel from "react-bootstrap/Carousel";
 
+import Alert from "react-bootstrap/Alert";
 import { useSession, signIn } from "next-auth/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 export default function Home() {
   const { data: session, status } = useSession();
   const router = useRouter();
+  const [showAlert, setShowAlert] = useState(false);
 
-  // useEffect(() => {
-  //   if (status === "unauthenticated") {
-  //     router.push('/login')
-  //   }
-  // }, [status, router]);
   const handleClick = () => {
     if (status === "unauthenticated") {
-      router.push('/login')
+      router.push("/login");
+    } else {
+      setShowAlert(true);
     }
-  }
+  };
 
   return (
     <div className={styles.container}>
       <Container>
+        {showAlert && (
+          <div className="row custom-gutter">
+            <div className="col-md-12">
+              <Alert
+                variant="warning"
+                onClose={() => setShowAlert(false)}
+                dismissible>
+                <Alert.Heading>Feature Coming Soon!</Alert.Heading>
+                <p>Hello {session?.user?.name}, this functionality is not developed yet.</p>
+              </Alert>
+            </div>
+          </div>
+        )}
         <div className="row custom-gutter">
           <div className="col-md-6">
             <video width="100%" height="auto" controls className="rounded-box">
