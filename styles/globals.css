@@ -48,6 +48,7 @@ a {
   margin-bottom: 44px;
 }
 .upload-cv {
+  cursor: pointer;
   background: linear-gradient(135deg, #dbb898 0%, #9dc1ce 100%);
   display: flex;
   justify-content: center;
@@ -62,6 +63,7 @@ a {
   margin-bottom: 0;
 }
 .create-cv {
+  cursor: pointer;
   background: linear-gradient(135deg, #9dc1ce 0%, #dbb898 100%);
   display: flex;
   justify-content: center;
@@ -138,6 +140,10 @@ main > div {
 video.rounded-box {
   margin-bottom: 38px;
   background: #000;
+}
+.login-box {
+  -webkit-border-radius: 14px 14px 14px 14px;
+  border-radius: 14px 14px 14px 14px;
 }
 @media (max-width: 1200px) {
   .carousel.slide .carousel-control-prev {

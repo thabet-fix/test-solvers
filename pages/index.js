@@ -3,7 +3,25 @@ import styles from "../styles/Home.module.css";
 import Container from "react-bootstrap/Container";
 import Carousel from "react-bootstrap/Carousel";
 
+import { useSession, signIn } from "next-auth/react";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+
 export default function Home() {
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  // useEffect(() => {
+  //   if (status === "unauthenticated") {
+  //     router.push('/login')
+  //   }
+  // }, [status, router]);
+  const handleClick = () => {
+    if (status === "unauthenticated") {
+      router.push('/login')
+    }
+  }
+
   return (
     <div className={styles.container}>
       <Container>
@@ -41,11 +59,11 @@ export default function Home() {
                     <p>
                       Nulla vitae elit libero, a pharetra augue mollis interdum.
                       Nulla vitae elit libero, a pharetra augue mollis interdum
-                      Nulla vitae elit libero, commodo cursus magna, vel scelerisque nisl
-                      consectetur. Praesent commodo a pharetra augue mollis
-                      interdumNulla vitae elit libero, a pharetra augue mollis
-                      interdumNulla vitae elit libero, a pharetra augue mollis
-                      interdum
+                      Nulla vitae elit libero, commodo cursus magna, vel
+                      scelerisque nisl consectetur. Praesent commodo a pharetra
+                      augue mollis interdumNulla vitae elit libero, a pharetra
+                      augue mollis interdumNulla vitae elit libero, a pharetra
+                      augue mollis interdum
                     </p>
                   </Carousel.Caption>
                 </Carousel.Item>
@@ -92,7 +110,7 @@ export default function Home() {
             </div>
           </div>
           <div className="col-md-6">
-            <div className="upload-cv rounded-box">
+            <div className="upload-cv rounded-box" onClick={handleClick}>
               <Image
                 src="/cv-icon.png"
                 alt="upload cv"
@@ -102,7 +120,7 @@ export default function Home() {
               <h2>Upload CV</h2>
               <p>( PDF or DOCX )</p>
             </div>
-            <div className="create-cv rounded-box">
+            <div className="create-cv rounded-box" onClick={handleClick}>
               <h2>Create CV with AI</h2>
             </div>
           </div>
