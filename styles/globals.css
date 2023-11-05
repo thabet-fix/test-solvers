@@ -42,8 +42,8 @@ a {
   color: #4c4d4f;
 }
 .rounded-box {
-  -webkit-border-radius: 14px 14px 14px 14px;
-  border-radius: 14px 14px 14px 14px;
+  -webkit-border-radius: 14px;
+  border-radius: 14px;
   height: 367px;
   margin-bottom: 44px;
 }
@@ -142,9 +142,106 @@ video.rounded-box {
   background: #000;
 }
 .login-box {
-  -webkit-border-radius: 14px 14px 14px 14px;
-  border-radius: 14px 14px 14px 14px;
+  max-width: 960px;
+  font-family: "Cabin";
+  color: #4c4d4f;
+  -webkit-border-radius: 14px;
+  border-radius: 14px;
+  padding: 24px;
+  background: #fff url("../public/bg-login.png") no-repeat top right;
+  background-size: contain;
+  margin: 0 auto;
+  margin-bottom: 50px;
 }
+.btn.btn-login {
+  background: none;
+  border: 1px solid #000;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  line-height: 36px;
+}
+.btn.btn-login:hover {
+  border-color: #d0d0d0;
+}
+.btn-icon {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  vertical-align: sub;
+  margin-right: 14px;
+}
+.info-login a {
+  color: #4C4D4F;
+}
+.fb-icon {
+  background: url("../public/ico-facebook.png") no-repeat;
+}
+.gg-icon {
+  background: url("../public/ico-google.png") no-repeat;
+}
+.tw-icon {
+  background: url("../public/ico-twitter.png") no-repeat;
+}
+.separation {
+  color: #4c4d4f80;
+  border-bottom: 2px solid #4c4d4f80;
+  text-align: center;
+}
+.separation span {
+  padding: 11px;
+  background: #fff;
+  display: inline-block;
+  position: relative;
+  top: 23px;
+}
+
+.check label{
+  color: rgba(76, 77, 79, 1);
+  font-size: 12px;
+  line-height: 20px;
+}
+.register-box {
+  margin-top: 39px;
+}
+.info-login {
+  color: rgba(76, 77, 79, 0.5);
+  font-size: 14px;
+}
+.register-box .form-control {
+  border: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+.register-box .form-control:focus {
+  box-shadow: none;
+}
+.btn.btn-signup {
+  background: black;
+  color: #fff;
+  border: 1px solid #000;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  line-height: 36px;
+  margin-top: 15px;
+}
+.btn.btn-signup:hover,
+.btn.btn-signup:focus {
+  background: #fff;
+  color: black;
+}
+.service{
+  margin-top: 25px;
+  font-family: "PT Serif", serif;
+  font-size: 12px;
+  color: rgba(76, 77, 79, 0.5);
+}
+.service a, .check{
+  color: rgba(76, 77, 79, 1);
+}
+
+
 @media (max-width: 1200px) {
   .carousel.slide .carousel-control-prev {
     left: 39%;
@@ -162,6 +259,9 @@ video.rounded-box {
   }
   .carousel-caption p {
     -webkit-line-clamp: 4;
+  }
+  .login-box {
+    background: #fff;
   }
 }
 @media (max-width: 768px) {
